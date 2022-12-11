@@ -1119,6 +1119,16 @@ swiper {
   justify-content: center;
   padding-top: 5.333vw;
 }
+.is-test2 {
+  align-items: center;
+  background-color: #fff;
+  color: #209d61;
+  display: flex;
+  flex-direction: column;
+  font-size: 4.267vw;
+  justify-content: center;
+  padding-top: 1.333vw;
+}
 .is-test img {
   height: 8vw;
   width: 8vw;

@@ -129,7 +129,10 @@
                         ><view class="ym-style">已接种3针新冠疫苗</view></view
                       ></view
                     ><view class="tips-box"
-                      ><view class="is-test" onclick="toggleSampled()"
+                      ><view
+                        class="is-test"
+                        onclick="toggleSampled()"
+                        style="display: none"
                         ><view class="font-style"
                           ><view>核酸</view
                           ><view class="style01" style="font-weight: bold"
@@ -140,7 +143,15 @@
                           id="sample-date"
                           >2022-11-26</view
                         ></view
-                      ><view
+                      >
+                      <view
+                        class="is-test2"
+                        onclick="toggleSampled()"
+                        style="display: flex"
+                      >
+                        <view style="height: 10vw"></view>
+                      </view>
+                      <view
                         arialabel="查询我的行程卡"
                         ariarole="button"
                         class="xc-mini"
@@ -247,7 +258,8 @@
                 ></swiper-item
               ></swiper
             ><view
-              style="position: absolute; top: 120vw; right: 0vw; color: red"
+              id="xck"
+              style="position: absolute; top: 110vw; right: 0vw; color: red"
               ><img
                 src="./static/q-xck.png"
                 style="height: 6.6vw" /></view></view
@@ -336,11 +348,18 @@
             ? "block"
             : "none");
       }
-      let showing_sampled = !0;
+      let showing_sampled = false;
       function toggleSampled() {
         document.querySelector(".is-test").style.display = showing_sampled
           ? "flex"
           : "none";
+        document.querySelector(".is-test2").style.display = !showing_sampled
+          ? "flex"
+          : "none";
+        document.querySelector("#xck").style.top = showing_sampled
+          ? "120vw"
+          : "110vw";
+        showing_sampled = !showing_sampled;
       }
       initServiceWorker("wuhan-hc");
     </script>
